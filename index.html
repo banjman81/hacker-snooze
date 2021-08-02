@@ -11,32 +11,37 @@
 <body>
     <div class="body-container">
         <!-- HEADER FEATURES -->
+        <!-- desktop nav -->
         <nav class="navbar navbar-expand-lg navbar-light header" >
             <a class="navbar-brand" href="#"><img class="home-icon" src="asset/svg/hacker-news.svg" alt="icon"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"> <span class="linked-nav">Trending</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <span class="linked-nav">Ask</span></a>
-                    </li>
-                </ul>
-            </div>
+                <div class="mobile">
+                    <a href="#" id="topstories"><span class="m-nav-link linked-nav active">Trending</span></a>
+                    <a href="#" id="askstories"><span class="m-nav-link linked-nav">Ask</span></a>
+                </div>
+                <div class="desktop">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" id="topstories" href="#"> <span class="linked-nav">Trending</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="askstories" href="#"> <span class="linked-nav">Ask</span></a>
+                        </li>
+                    </ul>
+                </div>
         </nav>
 
         <!-- MAIN CONTENTS -->
         <div class="main-contents">
-            <ol class="stories">
+            <div class="loader">
+
+            </div>
+            <ol class="stories hidden">
             </ol>
         </div>
 
         <!-- FOOTER -->
         <div class="footer">
-
+            <div class="back-btn mobile"><span>Back</span></div>
         </div>
     </div>
     

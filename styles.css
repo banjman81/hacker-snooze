@@ -18,8 +18,21 @@ body{
     font-weight: bold;
     font-size: 25px;
     padding: 0;
+    text-decoration: none;
+}
+.nav-item{
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
+.nav-item:hover{
+    background-color: rgba(255, 255, 255, 0.281);
+    border-radius: 5px;
+    color: #000000;
+}
+.navbar-nav li:hover{
+    color: #000000;
+}
 
 .main-contents{
     background-color: rgba(143, 255, 143, 0.171);
@@ -37,14 +50,24 @@ body{
 }
 .story-link{
     text-decoration: none;
+    font-weight: bold;
+}
+.card-body p{
+    font-size: 17px;
+    font-weight: 500;
 }
 
-.sub-icon{
+.like-icon{
     height: 25px;
     margin: 10px;
 }
 
+.comment-icon{
+    height: 25px;
+    margin: 10px;
+}
 
+/* rest of main contents */
 .main-contents::-webkit-scrollbar {
     width: 20px;
 }
@@ -63,13 +86,122 @@ body{
     margin: 0px 20px;
 }
 .active{
-    border-bottom:1px solid red;
-    background-color: #ff822f;
-    border-radius: 5px;
+    box-shadow: 0px 1px 0px rgb(255, 170, 131);
+    background-color: #ff7417;
+    border-radius: 3px;
+}
+.loader {
+    margin: auto;
+    margin-top: 30vh;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #ff7417;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+.mobile{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+.mobile a{
+    text-decoration: none;
+    margin: 0px 20px;
+}
+.filter-green{
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+.hidden{
+    display: none;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @media screen and (max-width : 1000px ) {
     .container{
         width: 500px
+    }
+    .desktop{
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+    .header{
+        padding-bottom: 25px;
+        height: 15%;
+    }
+    .navbar{
+        flex-direction: column;
+    }
+    .mobile{
+        opacity: 1;
+        width: 50px;
+        height: 20px;
+    }
+    .main-contents{
+        background-color: rgba(143, 255, 143, 0.171);
+        height: 75vh;
+        overflow-y:auto;
+    }
+    .main-contents::-webkit-scrollbar {
+        width: 5px;
+    }
+    .main-contents::-webkit-scrollbar-thumb {
+        background-color: #ff66007c;
+        border-radius: 2px;
+    }
+    .active{
+        color: #2e2a25f1;
+        text-shadow: 1px 1px 5px rgb(255, 170, 131);
+        box-shadow: none;
+        background-color: rgba(0, 0, 139, 0);
+        border-radius: 3px;
+    }
+    .footer{
+        height: 10vh;
+        padding: 10px;
+    }
+    .back-btn{
+        margin: auto;
+        vertical-align: center;
+        text-align: center;
+        padding: 25px;
+        width: 60%;
+        height: 20px;
+        background-color: #ff6600;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+    .back-btn span{
+        position: relative;
+        bottom: 2.2vh;
+        color: white;
+        font-size: 20px;
+    }
+    .card-body p{
+        font-size: 14px;
+        font-weight: 500;
+    }
+    h4{
+        font-size: 20px;
+    }
+    .card{
+        height: 175px;
+    }
+    .like-icon{
+        height: 20px;
+        margin: 5px;
+    }
+    
+    .comment-icon{
+        height: 20px;
+        margin: 5px;
     }
 }
