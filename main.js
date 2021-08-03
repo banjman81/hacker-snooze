@@ -139,6 +139,10 @@ list.on('click', 'a', function(){
     // $('.m-nav-link').toggleClass('active')
     console.log($(this).attr('id'))
     currentTopic = $(this).attr('id')
+    val1= 1
+    val2 = 5
+    currentPage = 1
+    pageDisplay.text(currentPage)
     loadStories($(this).attr('id'), 1 ,5)
 })
 
@@ -158,7 +162,7 @@ mobile.on('click', 'a', function(){
 })
 
 next.on('click', function(){
-    if(val1<100){
+    if(val1<95){
         console.log('next')
         $('ol').children().remove()
         val1+=5
@@ -172,7 +176,7 @@ next.on('click', function(){
     
 })
 back.on('click', function(){
-    if(val1>0){
+    if(val1>1){
         console.log('back')
         $('ol').children().remove()
         val1-=5
