@@ -111,22 +111,43 @@ body{
 .mobile a{
     text-decoration: none;
     margin: 0px 20px;
+    position: relative;
+    top: -1000px
 }
 .filter-green{
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+.comment-section{
+    width: 95vw;
+}
+.comment{
+    background-color: white;
+    margin: 2px;
+    margin-left: 5vw;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid#352210;
+    font-size: 15px;
+    color: black;
 }
 
 .hidden{
     display: none;
 }
+.no-link{
+    pointer-events: none;        
+    text-decoration: none;
+    color: black;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
 @media screen and (max-width : 1000px ) {
-    .container{
-        width: 500px
+    body{
+        overflow: hidden;
     }
     .desktop{
         visibility: hidden;
@@ -144,6 +165,8 @@ body{
         opacity: 1;
         width: 50px;
         height: 20px;
+        position: relative;
+        top: 1000px
     }
     .main-contents{
         background-color: rgba(143, 255, 143, 0.171);
@@ -193,7 +216,7 @@ body{
         font-size: 20px;
     }
     .card{
-        height: 175px;
+        height: fit-content;
     }
     .like-icon{
         height: 20px;
