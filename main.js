@@ -110,7 +110,7 @@ $('.main-contents').on('click', 'a', function(){
             $('ol').children().remove()
             $('.comment-section').children().remove()
             commentView = false
-            loadStories(currentTopic)
+            loadStories(currentTopic, val1, val2)
         }
         else{
             // console.log($(this).attr('id'))
