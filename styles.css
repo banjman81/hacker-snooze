@@ -157,12 +157,23 @@ a{
 .back{
     margin: 10px;
     background-color: #ff6600;
+    border: 1px solid 
+}
+.back:hover{
+    border: 1px solid #fcba8e;
+    background-color: #ff8838;
 }
 .next{
     margin: 10px;
     background-color: #ff6600;
-
+    border: 1px solid #ff8838;
 }
+.next:hover{
+    background-color: #ff8838;
+    border: 1px solid #f7bd97;
+}
+
+
 .page-display{
     margin-top: 15px;
     font-weight: bold;
