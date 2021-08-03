@@ -6,6 +6,7 @@ body{
 .body-container{
     margin: auto;
     width: 98vw;
+    height: 98vh;
     margin-top: 1%;
 }
 
@@ -69,7 +70,7 @@ body{
 
 /* rest of main contents */
 .main-contents::-webkit-scrollbar {
-    width: 20px;
+    width: 15px;
 }
 .main-contents::-webkit-scrollbar-thumb {
     background-color: #ff6600ce;
@@ -138,6 +139,31 @@ body{
     pointer-events: none;        
     text-decoration: none;
     color: black;
+}
+.bottom-notes{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.bottom-navs{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.back{
+    margin: 10px;
+    background-color: #ff6600;
+}
+.next{
+    margin: 10px;
+    background-color: #ff6600;
+
+}
+.page-display{
+    margin-top: 15px;
+    font-weight: bold;
+    align-items: center;
 }
 
 @keyframes spin {

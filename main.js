@@ -9,13 +9,18 @@ const likeLink = $('.like-link');
 const mobile = $('.mobile');
 const backButton = $('.back-btn');
 const key = $('.key')
+const back = $('.back')
+const next = $('.next')
+const pageDisplay = $('.page-display')
 
-
-async function loadStories(val) {
+let currentPage = 1
+let val1 = 1
+let val2 = 5
+async function loadStories(val, a, b) {
     const rawData = await fetch(`https://hacker-news.firebaseio.com/v0/${val}.json?print=pretty`)
     const data = await rawData.json(); // this is array of top stories
     // data.unshift(28026638)
-    for (let i = 0; i< 5; i++){
+    for (let i = a-1; i< b; i++){
         const headline = await fetch(`https://hacker-news.firebaseio.com/v0/item/${data[i]}.json?print=pretty`)
         const storyData = await headline.json()
         let comment = 0
@@ -79,9 +84,9 @@ async function loadComments(tag){
 
 let currentTopic ="topstories"
  // first thing when loading page
-loadStories('topstories')
+loadStories('topstories', 1, 5)
 
-
+pageDisplay.text(currentPage)
 
 let commentView = false
 // This will handel like icon and increase or decrease score
@@ -134,7 +139,7 @@ list.on('click', 'a', function(){
     // $('.m-nav-link').toggleClass('active')
     console.log($(this).attr('id'))
     currentTopic = $(this).attr('id')
-    loadStories($(this).attr('id'))
+    loadStories($(this).attr('id'), 1 ,5)
 })
 
 mobile.on('click', 'a', function(){
@@ -148,9 +153,39 @@ mobile.on('click', 'a', function(){
     $('.m-nav-link').toggleClass('active')
     loadStories($(this).attr('id'))
     currentTopic = $(this).attr('id')
-    loadStories($(this).attr('id'))
+    loadStories($(this).attr('id'),1 , 5)
     // $('.like-icon').addClass('.filter-green')
 })
+
+next.on('click', function(){
+    if(val1<100){
+        console.log('next')
+        $('ol').children().remove()
+        val1+=5
+        val2+=5
+        currentPage++
+        loading.removeClass('hidden')
+        stories.addClass('hidden')
+        pageDisplay.text(currentPage)
+        loadStories(currentTopic, val1, val2)
+    }
+    
+})
+back.on('click', function(){
+    if(val1>0){
+        console.log('back')
+        $('ol').children().remove()
+        val1-=5
+        val2-=5
+        currentPage--
+        loading.removeClass('hidden')
+        stories.addClass('hidden')
+        pageDisplay.text(currentPage)
+        loadStories(currentTopic, val1, val2)
+    }
+    
+})
+
 
 backButton.on('click', function(){
     history.back()
