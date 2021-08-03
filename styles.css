@@ -40,6 +40,9 @@ body{
     height: 75vh;
     overflow-y:auto;
 }
+a{
+    text-decoration: none;
+}
 
 .stories{
     list-style-type: none;
